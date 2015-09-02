@@ -1,4 +1,4 @@
-<html ng-app='buymore'>
+<html ng-app='research_lab'>
 
 <!-- Head -->
 <head>
@@ -60,6 +60,9 @@
 <script src='libs/js/rangy-core.js'></script>
 <script src='libs/js/rangy-selectionsaverestore.js'></script>
 <script src='libs/js/scrollReveal.js'></script>
+<script src='libs/js/angular-skrollr.js'></script>
+<script src='libs/js/angular-scroll.js'></script>
+<script src='libs/js/skrollr.js'></script>
 <script src='libs/js/Chart.StackedBar.js'></script>
 
 <script src="dist/app.js"></script>

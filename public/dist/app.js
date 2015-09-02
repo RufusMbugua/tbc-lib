@@ -1,22 +1,28 @@
-var app = angular.module("buymore", ['ui.router', 'restangular', 'smart-table',
+var app = angular.module("research_lab", ['ui.router', 'restangular',
+  'smart-table',
   'chart.js', 'textAngular', 'angularMoment', 'ui.bootstrap',
-  'highcharts-ng', 'leaflet-directive'
+  'highcharts-ng', 'leaflet-directive', 'sn.skrollr', 'duScroll'
 ]);
 
-app.config(function(RestangularProvider) {
-  // RestangularProvider.setBaseUrl('http://new.buymore.co.ke');
-  //  RestangularProvider.setRequestSuffix('.json');
-});
+app.config(function(RestangularProvider) {});
 
 
 app.run(['$http', '$rootScope', function($http, $rootScope) {
   $rootScope.date = new Date();
-  $rootScope.title = 'Accent Analytics';
+  $rootScope.title = 'Research Lab';
   $rootScope.messages = [];
   $rootScope.menu = [];
 }]);
+app.run(["snSkrollr", function(snSkrollr) {
+  snSkrollr.init();
+}])
 ;// I control the main demo.
 app.controller("accountCtrl", ['$scope', '$filter', '$timeout', '$state',
+  'Restangular', '$http', '$rootScope',
+  function(scope, filter, timeout, state, Restangular, $http, rootScope) {}
+]);
+;// I control the main demo.
+app.controller("publicCtrl", ['$scope', '$filter', '$timeout', '$state',
   'Restangular', '$http', '$rootScope',
   function(scope, filter, timeout, state, Restangular, $http, rootScope) {}
 ]);
@@ -64,7 +70,7 @@ app.directive('isActiveLink', ['$location', function($location) {
    * @param  {[type]} "/account/expenditure" [description]
    * @return {[type]}                        [description]
    */
-  $urlRouterProvider.otherwise("/login");
+  $urlRouterProvider.otherwise("/home");
 
   // Now set up the states
   /**
@@ -85,6 +91,37 @@ app.directive('isActiveLink', ['$location', function($location) {
         }
       }
     })
+    .state('public', {
+      views: {
+        '': {
+          controller: 'publicCtrl',
+          templateUrl: 'app/partials/public/index.html',
+        },
+        'header@public': {
+          templateUrl: 'app/partials/public/header.html',
+        },
+        'footer@public': {
+          templateUrl: 'app/partials/public/footer.html',
+        }
+      }
+    })
+    .state('public.home', {
+      url: '/home',
+      views: {
+        '': {
+          templateUrl: 'app/partials/public/home.html'
+        },
+        'banner@public.home': {
+          templateUrl: 'app/partials/public/banner.html'
+        },
+        'portfolio@public.home': {
+          templateUrl: 'app/partials/public/portfolio.html'
+        },
+        'careers@public.home': {
+          templateUrl: 'app/partials/public/careers.html'
+        },
+      }
+    })
     .state('login', {
       url: '/login',
       views: {
@@ -95,7 +132,7 @@ app.directive('isActiveLink', ['$location', function($location) {
       }
     });
 });
-;angular.module('templates-dist', ['../public/app/partials/account/index.html', '../public/app/partials/account/login.html', '../public/app/partials/test/index.html']);
+;angular.module('templates-dist', ['../public/app/partials/account/index.html', '../public/app/partials/account/login.html', '../public/app/partials/portfolio/index.html', '../public/app/partials/portfolio/list.html', '../public/app/partials/public/banner.html', '../public/app/partials/public/careers.html', '../public/app/partials/public/footer.html', '../public/app/partials/public/header.html', '../public/app/partials/public/home.html', '../public/app/partials/public/index.html', '../public/app/partials/public/map.html', '../public/app/partials/public/portfolio.html', '../public/app/partials/test/index.html']);
 
 angular.module("../public/app/partials/account/index.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/account/index.html",
@@ -120,8 +157,163 @@ angular.module("../public/app/partials/account/login.html", []).run(["$templateC
     "    </div>\n" +
     "    <div class=\"ui green button\">Login</div>\n" +
     "      </div>\n" +
-    "\n" +
     "  </form>\n" +
+    "</div>\n" +
+    "");
+}]);
+
+angular.module("../public/app/partials/portfolio/index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/portfolio/index.html",
+    "<div ui-view=\"\"></div>\n" +
+    "");
+}]);
+
+angular.module("../public/app/partials/portfolio/list.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/portfolio/list.html",
+    "");
+}]);
+
+angular.module("../public/app/partials/public/banner.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/public/banner.html",
+    "<div class=\"image-wrapper\" style=\"height:100%\">\n" +
+    "\n" +
+    "  <div class=\"description\">\n" +
+    "    <h2 class=\"bottom\"\n" +
+    "    sn-skrollr\n" +
+    "    data-start=\"bottom:300\"\n" +
+    "    data--1p-top=\"bottom:0\"\n" +
+    "    >Coming Soon!</h2>\n" +
+    "  </div>\n" +
+    "</div>\n" +
+    "");
+}]);
+
+angular.module("../public/app/partials/public/careers.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/public/careers.html",
+    "<div id=\"careers\" class=\"content\">\n" +
+    "  <h2>Careers</h2>\n" +
+    "  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae corrupti beatae nesciunt\n" +
+    "     excepturi quaerat cum officia ab, ipsa praesentium labore provident libero, numquam vel\n" +
+    "     impedit facilis, nisi dolorum consectetur neque!</p>\n" +
+    "     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
+    "       Eligendi tempora recusandae voluptatem natus dignissimos\n" +
+    "       commodi itaque officiis, accusamus adipisci obcaecati tempore laboriosam suscipit debitis\n" +
+    "        maiores, at, sint qui. Voluptatum, rerum.</p>\n" +
+    "        <p>\n" +
+    "          Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
+    "          Error mollitia assumenda incidunt ab, eveniet ipsum ipsa nemo aut\n" +
+    "          laboriosam, tenetur? Ex eaque modi corporis impedit labore pariatur, eius\n" +
+    "          dicta molestias.\n" +
+    "        </p>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"col-md-12\">\n" +
+    "            <h3>Instructions</h3>\n" +
+    "            <ol>\n" +
+    "              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis atque recusandae neque in quas omnis suscipit, animi vitae eaque. Ea odio neque quidem, saepe sit maiores eius iure illum natus</li>\n" +
+    "              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis atque recusandae neque in quas omnis suscipit, animi vitae eaque. Ea odio neque quidem, saepe sit maiores eius iure illum natus</li>\n" +
+    "              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis atque recusandae neque in quas omnis suscipit, animi vitae eaque. Ea odio neque quidem, saepe sit maiores eius iure illum natus</li>\n" +
+    "              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis atque recusandae neque in quas omnis suscipit, animi vitae eaque. Ea odio neque quidem, saepe sit maiores eius iure illum natus</li>\n" +
+    "              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis atque recusandae neque in quas omnis suscipit, animi vitae eaque. Ea odio neque quidem, saepe sit maiores eius iure illum natus</li>\n" +
+    "            </ol>\n" +
+    "          </div>\n" +
+    "          <div class=\"col-md-12\">\n" +
+    "            <h3>Apply</h3>\n" +
+    "            <form action=\"\">\n" +
+    "              <div class=\"form-group\">\n" +
+    "                <label for=\"\">Email Address</label>\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"e.g mbugua@example.com\">\n" +
+    "              </div>\n" +
+    "              <div class=\"form-group\">\n" +
+    "                <label for=\"\">Cover Letter</label>\n" +
+    "                <textarea type=\"text\" class=\"form-control\" rows=\"5\" placeholder=\"e.g I really love coding...\"></textarea>\n" +
+    "              </div>\n" +
+    "              <div class=\"form-group\">\n" +
+    "                <label for=\"\">Resume</label>\n" +
+    "                <input type=\"file\" class=\"form-control\">\n" +
+    "              </div>\n" +
+    "              <button class=\"btn btn-default\">\n" +
+    "                Submit\n" +
+    "              </button>\n" +
+    "            </form>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"col-md-6\"></div>\n" +
+    "\n" +
+    "</div>\n" +
+    "");
+}]);
+
+angular.module("../public/app/partials/public/footer.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/public/footer.html",
+    "");
+}]);
+
+angular.module("../public/app/partials/public/header.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/public/header.html",
+    "<nav id=\"main\"\n" +
+    "sn-skrollr\n" +
+    "    data-start=\"position:absolute;top:0;width:100%;background:rgba(255,255,255,0.00001)\"\n" +
+    "    data--90p-top=\"padding:5px;position:fixed;width:100%;background:rgba(44, 62, 80,1.0);z-index:100\"\n" +
+    ">\n" +
+    "  <div class=\"container-fluid\">\n" +
+    "    <div class=\"navbar-header\">\n" +
+    "      <a class=\"navbar-brand\" href=\"#\">\n" +
+    "        Research <span class=\"blue\">Lab</span>\n" +
+    "      </a>\n" +
+    "    </div>\n" +
+    "    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n" +
+    "        <ul class=\"nav navbar-nav navbar-right\">\n" +
+    "          <li><a du-smooth-scroll du-scroll-spy=\"anchor\" href=\"#about\">About</a></li>\n" +
+    "          <li><a du-smooth-scroll offset=\"50\" du-scroll-spy=\"anchor\" href=\"#portfolio\">Portfolio</a></li>\n" +
+    "          <li><a du-smooth-scroll du-scroll-spy=\"anchor\" href=\"#careers\">Careers</a></li>\n" +
+    "          <li><a href=\"\">Blog</a></li>\n" +
+    "        </ul>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </nav>\n" +
+    "");
+}]);
+
+angular.module("../public/app/partials/public/home.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/public/home.html",
+    "<div id=\"banner\" ui-view=\"banner\"></div>\n" +
+    "<div ui-view=\"map\"></div>\n" +
+    "<div ui-view=\"portfolio\"></div>\n" +
+    "<div ui-view=\"careers\"></div>\n" +
+    "<div ui-view=\"\"></div>\n" +
+    "");
+}]);
+
+angular.module("../public/app/partials/public/index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/public/index.html",
+    "<div ui-view=\"header\"></div>\n" +
+    "<div ui-view=\"\"></div>\n" +
+    "");
+}]);
+
+angular.module("../public/app/partials/public/map.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/public/map.html",
+    "");
+}]);
+
+angular.module("../public/app/partials/public/portfolio.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/public/portfolio.html",
+    "<div id=\"portfolio\" class=\"content\">\n" +
+    "  <h3>Portfolio</h3>\n" +
+    "  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae corrupti beatae nesciunt\n" +
+    "     excepturi quaerat cum officia ab, ipsa praesentium labore provident libero, numquam vel\n" +
+    "     impedit facilis, nisi dolorum consectetur neque!</p>\n" +
+    "     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
+    "       Eligendi tempora recusandae voluptatem natus dignissimos\n" +
+    "       commodi itaque officiis, accusamus adipisci obcaecati tempore laboriosam suscipit debitis\n" +
+    "        maiores, at, sint qui. Voluptatum, rerum.</p>\n" +
+    "        <p>\n" +
+    "          Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
+    "          Error mollitia assumenda incidunt ab, eveniet ipsum ipsa nemo aut\n" +
+    "          laboriosam, tenetur? Ex eaque modi corporis impedit labore pariatur, eius\n" +
+    "          dicta molestias.\n" +
+    "        </p>\n" +
     "</div>\n" +
     "");
 }]);
