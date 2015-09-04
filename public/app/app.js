@@ -1,7 +1,7 @@
 var app = angular.module("research_lab", ['ui.router', 'restangular',
   'smart-table',
   'chart.js', 'textAngular', 'angularMoment', 'ui.bootstrap',
-  'highcharts-ng', 'leaflet-directive', 'sn.skrollr', 'duScroll'
+  'highcharts-ng', 'leaflet-directive', 'sn.skrollr', 'duScroll', 'slick'
 ]);
 
 app.config(function(RestangularProvider) {});

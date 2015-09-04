@@ -5731,7 +5731,6 @@ nav#main {
       color: white; }
     .image-wrapper .description .bottom {
       position: absolute;
-      bottom: 0;
       width: 100%; }
 
 .content {
@@ -5759,5 +5758,20 @@ nav#main {
 
 ol li {
   margin: 2rem 0; }
+
+.slick-dots {
+  bottom: 30px !important; }
+  .slick-dots li button:before {
+    font-size: 20px !important;
+    color: white !important; }
+
+.slick-prev, .slick-next {
+  z-index: 200000 !important; }
+
+.slick-prev {
+  left: 0 !important; }
+
+.slick-next {
+  right: 0 !important; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -24,6 +24,8 @@
 
     <link rel="stylesheet" href="libs/styles/leaflet.css" />
     <link rel="stylesheet" href="libs/styles/leaflet.label.css" />
+		<link rel="stylesheet" href="libs/styles/slick.css" />
+		<link rel="stylesheet" href="libs/styles/slick-theme.css" />
     <link rel="stylesheet" href="libs/styles/MarkerCluster.css" />
     <link rel="stylesheet" href="libs/styles/MarkerCluster.Default.css" />
 	<title ng-bind="title"></title>
@@ -64,6 +66,8 @@
 <script src='libs/js/angular-scroll.js'></script>
 <script src='libs/js/skrollr.js'></script>
 <script src='libs/js/Chart.StackedBar.js'></script>
+<script src='libs/js/slick.js'></script>
+<script src='libs/js/slick.min.js'></script>
 
 <script src="dist/app.js"></script>
 <script src="//localhost:35729/livereload.js"></script>

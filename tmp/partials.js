@@ -42,14 +42,20 @@ angular.module("../public/app/partials/portfolio/list.html", []).run(["$template
 angular.module("../public/app/partials/public/banner.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/public/banner.html",
     "<div class=\"image-wrapper\" style=\"height:100%\">\n" +
-    "\n" +
-    "  <div class=\"description\">\n" +
-    "    <h2 class=\"bottom\"\n" +
-    "    sn-skrollr\n" +
-    "    data-start=\"bottom:300\"\n" +
-    "    data--1p-top=\"bottom:0\"\n" +
-    "    >Coming Soon!</h2>\n" +
+    "  <div slick dots=true infinite=true speed=300 slides-to-show=1 touch-move=true slides-to-scroll=1 arrows=\"true\"\n" +
+    "  autoplay=\"true\" autoplaySpeed=\"1000\"\n" +
+    "  >\n" +
+    "      <div ng-repeat=\"item in items\">\n" +
+    "          <div class=\"description\">\n" +
+    "            <h2 class=\"bottom\"\n" +
+    "            sn-skrollr\n" +
+    "            data-start=\"bottom:300\"\n" +
+    "            data--80p-top=\"bottom:50\"\n" +
+    "            ng-bind=\"item.description\"></h2>\n" +
+    "          </div>\n" +
+    "      </div>\n" +
     "  </div>\n" +
+    "\n" +
     "</div>\n" +
     "");
 }]);
@@ -130,9 +136,9 @@ angular.module("../public/app/partials/public/header.html", []).run(["$templateC
     "    </div>\n" +
     "    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n" +
     "        <ul class=\"nav navbar-nav navbar-right\">\n" +
-    "          <li><a du-smooth-scroll du-scroll-spy=\"anchor\" href=\"#about\">About</a></li>\n" +
+    "          <li><a du-smooth-scroll du-scroll-spy=\"anchor\" href=\"#banner\">About</a></li>\n" +
     "          <li><a du-smooth-scroll offset=\"50\" du-scroll-spy=\"anchor\" href=\"#portfolio\">Portfolio</a></li>\n" +
-    "          <li><a du-smooth-scroll du-scroll-spy=\"anchor\" href=\"#careers\">Careers</a></li>\n" +
+    "          <li><a du-smooth-scroll offset=\"50\" du-scroll-spy=\"anchor\" href=\"#careers\">Careers</a></li>\n" +
     "          <li><a href=\"\">Blog</a></li>\n" +
     "        </ul>\n" +
     "      </div>\n" +

@@ -1,10 +1,16 @@
 <div class="image-wrapper" style="height:100%">
-
-  <div class="description">
-    <h2 class="bottom"
-    sn-skrollr
-    data-start="bottom:300"
-    data--1p-top="bottom:0"
-    >Coming Soon!</h2>
+  <div slick dots=true infinite=true speed=300 slides-to-show=1 touch-move=true slides-to-scroll=1 arrows="true"
+  autoplay="true" autoplaySpeed="1000"
+  >
+      <div ng-repeat="item in items">
+          <div class="description">
+            <h2 class="bottom"
+            sn-skrollr
+            data-start="bottom:300"
+            data--80p-top="bottom:50"
+            ng-bind="item.description"></h2>
+          </div>
+      </div>
   </div>
+
 </div>

@@ -90,7 +90,6 @@ nav#main{
     }
     .bottom{
       position: absolute;
-      bottom:0;
       width:100%;
 
     }
@@ -128,4 +127,24 @@ ol{
   li{
     margin:2rem 0;
   }
+}
+
+// Slick
+.slick-dots{
+  bottom:30px !important;
+  li{
+    button:before{
+      font-size:20px !important;
+      color:white !important;
+    }
+  }
+}
+.slick-prev,.slick-next{
+  z-index: 200000 !important;
+}
+.slick-prev{
+  left:0 !important;
+}
+.slick-next{
+  right:0 !important;
 }
