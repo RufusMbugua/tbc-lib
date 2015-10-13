@@ -14,12 +14,9 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		$this->call('ServicePointsTableSeeder');
-		$this->command->info('Service Points table seeded');
+		$this->call('Genres');
+		$this->command->info('Genres seeded');
 
-
-		$this->call('SuppliersTableSeeder');
-		$this->command->info('Suppliers Points table seeded');
 	}
 
 }

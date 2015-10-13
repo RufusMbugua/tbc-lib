@@ -30,7 +30,7 @@ body{
   @extend .typl8-zeta;
   margin-bottom:0;
 }
-nav#main{
+nav#main,nav#dashboard{
   @extend .navbar;
   @extend .navbar-default;
   @extend .typl8-delta;
@@ -70,6 +70,10 @@ nav#main{
     }
   }
 
+}
+nav#dashboard{
+  background:$green;
+  padding:5px 10px;
 }
 // Image Styles
 .image-wrapper{
@@ -147,4 +151,63 @@ ol{
 }
 .slick-next{
   right:0 !important;
+}
+// Cards
+.inner.card{
+  li{
+  a{
+    color:$red !important;
+}
+}
+li.active{
+  a{
+    background:$red !important;
+    color:white !important;
+}
+}
+}
+
+// books
+.book{
+  h5{
+    margin-bottom:0.5em;
+  }
+  .title{
+    color:$blue;
+  }
+  .author{
+    color:$red;
+  }
+  .tags{
+    a{
+      margin-right:5px;
+      font-size:0.8em;
+      color:#999;
+      text-decoration:none;
+    }
+    a:hover{
+      color:#666;
+    }
+    
+  }
+  img{
+    @extend .img-responsive;
+    width:100%;
+    height:200px;
+    margin-bottom:0.5em;
+  }
+  .footer{
+    color:#666;
+    position:relative;
+    .owner{
+      color:$blue;
+        font-style:italic;
+    }
+    .copies{
+      margin-left:10px;
+    }
+    .status{
+      float:right;
+    }
+  }
 }

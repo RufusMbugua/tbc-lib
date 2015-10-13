@@ -232,7 +232,7 @@ th {
   select {
     background: #fff !important; }
 
-  .navbar, nav#main {
+  .navbar, nav#main, nav#dashboard {
     display: none; }
 
   .btn > .caret,
@@ -914,7 +914,7 @@ figure {
 img {
   vertical-align: middle; }
 
-.img-responsive {
+.img-responsive, .book img {
   display: block;
   max-width: 100%;
   height: auto; }
@@ -3379,18 +3379,18 @@ tbody.collapse.in {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
-.navbar, nav#main {
+.navbar, nav#main, nav#dashboard {
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent; }
-  .navbar:before, nav#main:before, .navbar:after, nav#main:after {
+  .navbar:before, nav#main:before, nav#dashboard:before, .navbar:after, nav#main:after, nav#dashboard:after {
     content: " ";
     display: table; }
-  .navbar:after, nav#main:after {
+  .navbar:after, nav#main:after, nav#dashboard:after {
     clear: both; }
   @media (min-width: 768px) {
-    .navbar, nav#main {
+    .navbar, nav#main, nav#dashboard {
       border-radius: 4px; } }
 
 .navbar-header:before, .navbar-header:after {
@@ -3493,7 +3493,7 @@ tbody.collapse.in {
   .navbar-brand > img {
     display: block; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, nav#main > .container .navbar-brand, .navbar > .container-fluid .navbar-brand, nav#main > .container-fluid .navbar-brand {
+    .navbar > .container .navbar-brand, nav#main > .container .navbar-brand, nav#dashboard > .container .navbar-brand, .navbar > .container-fluid .navbar-brand, nav#main > .container-fluid .navbar-brand, nav#dashboard > .container-fluid .navbar-brand {
       margin-left: -15px; } }
 
 .navbar-toggle {
@@ -3655,61 +3655,62 @@ tbody.collapse.in {
     margin-right: -15px; }
     .navbar-right ~ .navbar-right {
       margin-right: 0; } }
-.navbar-default, nav#main {
+.navbar-default, nav#main, nav#dashboard {
   background-color: #f8f8f8;
   border-color: #e7e7e7; }
-  .navbar-default .navbar-brand, nav#main .navbar-brand {
+  .navbar-default .navbar-brand, nav#main .navbar-brand, nav#dashboard .navbar-brand {
     color: #777; }
-    .navbar-default .navbar-brand:hover, nav#main .navbar-brand:hover, .navbar-default .navbar-brand:focus, nav#main .navbar-brand:focus {
+    .navbar-default .navbar-brand:hover, nav#main .navbar-brand:hover, nav#dashboard .navbar-brand:hover, .navbar-default .navbar-brand:focus, nav#main .navbar-brand:focus, nav#dashboard .navbar-brand:focus {
       color: #5e5e5e;
       background-color: transparent; }
-  .navbar-default .navbar-text, nav#main .navbar-text {
+  .navbar-default .navbar-text, nav#main .navbar-text, nav#dashboard .navbar-text {
     color: #777; }
-  .navbar-default .navbar-nav > li > a, nav#main .navbar-nav > li > a {
+  .navbar-default .navbar-nav > li > a, nav#main .navbar-nav > li > a, nav#dashboard .navbar-nav > li > a {
     color: #777; }
-    .navbar-default .navbar-nav > li > a:hover, nav#main .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, nav#main .navbar-nav > li > a:focus {
+    .navbar-default .navbar-nav > li > a:hover, nav#main .navbar-nav > li > a:hover, nav#dashboard .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, nav#main .navbar-nav > li > a:focus, nav#dashboard .navbar-nav > li > a:focus {
       color: #333;
       background-color: transparent; }
-  .navbar-default .navbar-nav > .active > a, nav#main .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, nav#main .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, nav#main .navbar-nav > .active > a:focus {
+  .navbar-default .navbar-nav > .active > a, nav#main .navbar-nav > .active > a, nav#dashboard .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, nav#main .navbar-nav > .active > a:hover, nav#dashboard .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, nav#main .navbar-nav > .active > a:focus, nav#dashboard .navbar-nav > .active > a:focus {
     color: #555;
     background-color: #e7e7e7; }
-  .navbar-default .navbar-nav > .disabled > a, nav#main .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, nav#main .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus, nav#main .navbar-nav > .disabled > a:focus {
+  .navbar-default .navbar-nav > .disabled > a, nav#main .navbar-nav > .disabled > a, nav#dashboard .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, nav#main .navbar-nav > .disabled > a:hover, nav#dashboard .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus, nav#main .navbar-nav > .disabled > a:focus, nav#dashboard .navbar-nav > .disabled > a:focus {
     color: #ccc;
     background-color: transparent; }
-  .navbar-default .navbar-toggle, nav#main .navbar-toggle {
+  .navbar-default .navbar-toggle, nav#main .navbar-toggle, nav#dashboard .navbar-toggle {
     border-color: #ddd; }
-    .navbar-default .navbar-toggle:hover, nav#main .navbar-toggle:hover, .navbar-default .navbar-toggle:focus, nav#main .navbar-toggle:focus {
+    .navbar-default .navbar-toggle:hover, nav#main .navbar-toggle:hover, nav#dashboard .navbar-toggle:hover, .navbar-default .navbar-toggle:focus, nav#main .navbar-toggle:focus, nav#dashboard .navbar-toggle:focus {
       background-color: #ddd; }
-    .navbar-default .navbar-toggle .icon-bar, nav#main .navbar-toggle .icon-bar {
+    .navbar-default .navbar-toggle .icon-bar, nav#main .navbar-toggle .icon-bar, nav#dashboard .navbar-toggle .icon-bar {
       background-color: #888; }
-  .navbar-default .navbar-collapse, nav#main .navbar-collapse,
+  .navbar-default .navbar-collapse, nav#main .navbar-collapse, nav#dashboard .navbar-collapse,
   .navbar-default .navbar-form,
-  nav#main .navbar-form {
+  nav#main .navbar-form,
+  nav#dashboard .navbar-form {
     border-color: #e7e7e7; }
-  .navbar-default .navbar-nav > .open > a, nav#main .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, nav#main .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, nav#main .navbar-nav > .open > a:focus {
+  .navbar-default .navbar-nav > .open > a, nav#main .navbar-nav > .open > a, nav#dashboard .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, nav#main .navbar-nav > .open > a:hover, nav#dashboard .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, nav#main .navbar-nav > .open > a:focus, nav#dashboard .navbar-nav > .open > a:focus {
     background-color: #e7e7e7;
     color: #555; }
   @media (max-width: 767px) {
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a, nav#main .navbar-nav .open .dropdown-menu > li > a {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a, nav#main .navbar-nav .open .dropdown-menu > li > a, nav#dashboard .navbar-nav .open .dropdown-menu > li > a {
       color: #777; }
-      .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, nav#main .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, nav#main .navbar-nav .open .dropdown-menu > li > a:focus {
+      .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, nav#main .navbar-nav .open .dropdown-menu > li > a:hover, nav#dashboard .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, nav#main .navbar-nav .open .dropdown-menu > li > a:focus, nav#dashboard .navbar-nav .open .dropdown-menu > li > a:focus {
         color: #333;
         background-color: transparent; }
-    .navbar-default .navbar-nav .open .dropdown-menu > .active > a, nav#main .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, nav#main .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, nav#main .navbar-nav .open .dropdown-menu > .active > a:focus {
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a, nav#main .navbar-nav .open .dropdown-menu > .active > a, nav#dashboard .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, nav#main .navbar-nav .open .dropdown-menu > .active > a:hover, nav#dashboard .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, nav#main .navbar-nav .open .dropdown-menu > .active > a:focus, nav#dashboard .navbar-nav .open .dropdown-menu > .active > a:focus {
       color: #555;
       background-color: #e7e7e7; }
-    .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, nav#main .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, nav#main .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus, nav#main .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, nav#main .navbar-nav .open .dropdown-menu > .disabled > a, nav#dashboard .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, nav#main .navbar-nav .open .dropdown-menu > .disabled > a:hover, nav#dashboard .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus, nav#main .navbar-nav .open .dropdown-menu > .disabled > a:focus, nav#dashboard .navbar-nav .open .dropdown-menu > .disabled > a:focus {
       color: #ccc;
       background-color: transparent; } }
-  .navbar-default .navbar-link, nav#main .navbar-link {
+  .navbar-default .navbar-link, nav#main .navbar-link, nav#dashboard .navbar-link {
     color: #777; }
-    .navbar-default .navbar-link:hover, nav#main .navbar-link:hover {
+    .navbar-default .navbar-link:hover, nav#main .navbar-link:hover, nav#dashboard .navbar-link:hover {
       color: #333; }
-  .navbar-default .btn-link, nav#main .btn-link {
+  .navbar-default .btn-link, nav#main .btn-link, nav#dashboard .btn-link {
     color: #777; }
-    .navbar-default .btn-link:hover, nav#main .btn-link:hover, .navbar-default .btn-link:focus, nav#main .btn-link:focus {
+    .navbar-default .btn-link:hover, nav#main .btn-link:hover, nav#dashboard .btn-link:hover, .navbar-default .btn-link:focus, nav#main .btn-link:focus, nav#dashboard .btn-link:focus {
       color: #333; }
-    .navbar-default .btn-link[disabled]:hover, nav#main .btn-link[disabled]:hover, .navbar-default .btn-link[disabled]:focus, nav#main .btn-link[disabled]:focus, fieldset[disabled] .navbar-default .btn-link:hover, fieldset[disabled] nav#main .btn-link:hover, fieldset[disabled] .navbar-default .btn-link:focus, fieldset[disabled] nav#main .btn-link:focus {
+    .navbar-default .btn-link[disabled]:hover, nav#main .btn-link[disabled]:hover, nav#dashboard .btn-link[disabled]:hover, .navbar-default .btn-link[disabled]:focus, nav#main .btn-link[disabled]:focus, nav#dashboard .btn-link[disabled]:focus, fieldset[disabled] .navbar-default .btn-link:hover, fieldset[disabled] nav#main .btn-link:hover, fieldset[disabled] nav#dashboard .btn-link:hover, fieldset[disabled] .navbar-default .btn-link:focus, fieldset[disabled] nav#main .btn-link:focus, fieldset[disabled] nav#dashboard .btn-link:focus {
       color: #ccc; }
 
 .navbar-inverse {
@@ -5425,7 +5426,7 @@ License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
   font-family: "Ampersand";
   src: local("Georgia");
   unicode-range: U+270C; }
-.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, h3, .typl8-gamma, h4, .typl8-delta, h5, nav#main, #portfolio, #careers, .typl8-epsilon, .typl8-zeta, h6, body {
+.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, h3, .typl8-gamma, h4, .typl8-delta, h5, nav#main, nav#dashboard, #portfolio, #careers, .typl8-epsilon, .typl8-zeta, h6, body {
   text-rendering: optimizeLegibility;
   line-height: 1;
   margin-top: 0;
@@ -5488,7 +5489,7 @@ body {
   margin-bottom: 20.56154px;
   margin-bottom: 1.14231rem; }
 
-.typl8-delta, h5, nav#main, #portfolio, #careers {
+.typl8-delta, h5, nav#main, nav#dashboard, #portfolio, #careers {
   font-size: 21px;
   font-size: 1.16667rem;
   margin-bottom: 25.45714px;
@@ -5694,27 +5695,31 @@ body {
   height: auto !important;
   margin-bottom: 0; }
 
-nav#main {
+nav#main, nav#dashboard {
   border: none;
   background: transparent;
   border-radius: 0;
   padding: 1rem; }
-  nav#main .navbar-right {
+  nav#main .navbar-right, nav#dashboard .navbar-right {
     margin-right: 0 !important; }
-  nav#main .navbar-brand {
+  nav#main .navbar-brand, nav#dashboard .navbar-brand {
     color: white !important; }
-    nav#main .navbar-brand span.blue {
+    nav#main .navbar-brand span.blue, nav#dashboard .navbar-brand span.blue {
       color: #95A5A6; }
-  nav#main li {
+  nav#main li, nav#dashboard li {
     list-style: none; }
-    nav#main li a {
+    nav#main li a, nav#dashboard li a {
       color: white !important;
       text-decoration: none; }
-    nav#main li a:hover {
+    nav#main li a:hover, nav#dashboard li a:hover {
       text-decoration: none; }
-  nav#main li:hover a, nav#main li.active a {
+  nav#main li:hover a, nav#main li.active a, nav#dashboard li:hover a, nav#dashboard li.active a {
     color: #e26a6a !important;
     background: transparent !important; }
+
+nav#dashboard {
+  background: #68C3A3;
+  padding: 5px 10px; }
 
 .image-wrapper {
   position: relative; }
@@ -5773,5 +5778,39 @@ ol li {
 
 .slick-next {
   right: 0 !important; }
+
+.inner.card li a {
+  color: #e26a6a !important; }
+.inner.card li.active a {
+  background: #e26a6a !important;
+  color: white !important; }
+
+.book h5 {
+  margin-bottom: 0.5em; }
+.book .title {
+  color: #2C3E50; }
+.book .author {
+  color: #e26a6a; }
+.book .tags a {
+  margin-right: 5px;
+  font-size: 0.8em;
+  color: #999;
+  text-decoration: none; }
+.book .tags a:hover {
+  color: #666; }
+.book img {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 0.5em; }
+.book .footer {
+  color: #666;
+  position: relative; }
+  .book .footer .owner {
+    color: #2C3E50;
+    font-style: italic; }
+  .book .footer .copies {
+    margin-left: 10px; }
+  .book .footer .status {
+    float: right; }
 
 /*# sourceMappingURL=styles.css.map */

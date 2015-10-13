@@ -1,0 +1,20 @@
+<div ui-view="">
+	<form action="">
+		<div class="col-md-12" style="margin-bottom:1em">
+			<input ng-model="book.name" type="text" class="form-control" placeholder="Book Title">
+		</div>
+		<div class="col-md-12" style="margin-bottom:1em">
+			<input ng-model="book.author" type="text" class="form-control" placeholder="Author">
+		</div>
+		<div class="col-md-12" style="margin-bottom:1em">
+			<input ng-model="book.tags" type="text" class="form-control" placeholder="Book Tags">
+		</div>
+		<div class="col-md-12" style="margin-bottom:1em">
+			<select class="form-control" ng-model="book.genre_id" ng-options="genre.id as genre.name for genre in genres"></select>
+		</div>
+		<div class="col-md-12" style="margin-bottom:1em">
+			<button class="btn btn-success" ng-click="add()"><i class="ion-plus-round"></i>Add Book</button>
+		</div>
+		
+	</form>
+</div>

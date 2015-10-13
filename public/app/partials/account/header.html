@@ -1,0 +1,18 @@
+<nav id="dashboard"
+>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="account.dashboard">
+        tbc
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a >Notifications</a></li>
+          <li><a is-active-nav ui-sref="account.browse">Browse</a></li>
+          <li><a is-active-nav ui-sref="account.my-books">My Books</a></li>
+          <li><a ng-click="logout()">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>

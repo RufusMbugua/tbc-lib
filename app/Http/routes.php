@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'TestController@index');
+Route::resource('books', 'BookController');
+Route::resource('genres', 'GenreController');

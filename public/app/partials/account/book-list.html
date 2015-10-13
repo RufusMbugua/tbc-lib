@@ -1,0 +1,37 @@
+<div class="inner card">
+<h4>Book List
+
+<nav class="pull-right">
+	<button class="btn btn-success" ui-sref="account.book.add"><i class="ion-plus-round"></i>Add Book</button>
+</nav>
+<div class="pull-right" style="margin-right:20px">
+	<ul class="nav nav-pills" style="font-size:0.5em">
+	<li class="active"><a href="#">Author</a></li>
+	<li class><a href="#">Latest</a></li>
+</ul>
+</div>
+
+</h4>
+	<div class="row">
+		<div class="col-md-3 book" ng-repeat="book in books" ng-if="books.length>0">
+			<h5>
+				<div ng-bind="book.name" class="title"></div>
+				<div style="font-size:0.7em">by <a ng-bind="book.author" class="author"></a></div>
+				<span class="tags">
+					<a href="" ng-repeat="tag in book.tags">#{{tag}}</a>
+				</span>
+			</h5>
+			<img src="" alt="">
+			<div class="footer">
+				<span class="last_read">Last Week</span>
+				<span class="status">
+					<label class="label label-success">available</label>
+				</span>
+				
+			</div>
+		</div>
+		<h6 style="text-align:center" ng-if='books.length==0'>
+			No books
+		</h6>
+	</div>
+</div>
