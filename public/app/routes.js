@@ -43,14 +43,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
             '': {
                 templateUrl: 'app/partials/public/home.html'
             },
+            'about@public.home': {
+                templateUrl: 'app/partials/public/about.html'
+            },
+            'members@public.home': {
+                templateUrl: 'app/partials/public/members.html'
+            },
             'banner@public.home': {
                 templateUrl: 'app/partials/public/banner.html'
-            },
-            'portfolio@public.home': {
-                templateUrl: 'app/partials/public/portfolio.html'
-            },
-            'careers@public.home': {
-                templateUrl: 'app/partials/public/careers.html'
             },
         }
     }).state('login', {

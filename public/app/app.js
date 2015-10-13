@@ -9,7 +9,7 @@ app.config(function(RestangularProvider) {});
 
 app.run(['$http', '$rootScope', function($http, $rootScope) {
   $rootScope.date = new Date();
-  $rootScope.title = 'Research Lab';
+  $rootScope.title = 'The Book Club';
   $rootScope.messages = [];
   $rootScope.menu = [];
 }]);

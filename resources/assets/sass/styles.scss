@@ -106,12 +106,12 @@ nav#dashboard{
     text-align: center;
   }
 }
-#portfolio,#careers{
+#about,#members{
   background: $grey;
   @extend .typl8-delta;
   min-height:100%;
 }
-#careers{
+#about{
   background: $red;
   color:white !important;
   h1,h2,h3,h4,h5,h6{

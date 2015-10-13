@@ -1,4 +1,4 @@
-angular.module('templates-dist', ['../public/app/partials/account/book-add.html', '../public/app/partials/account/book-list.html', '../public/app/partials/account/book.html', '../public/app/partials/account/browse.html', '../public/app/partials/account/dashboard.html', '../public/app/partials/account/footer.html', '../public/app/partials/account/genres.html', '../public/app/partials/account/header.html', '../public/app/partials/account/index.html', '../public/app/partials/account/last-borrowed.html', '../public/app/partials/account/latest.html', '../public/app/partials/account/login.html', '../public/app/partials/account/my-books.html', '../public/app/partials/account/overdue.html', '../public/app/partials/account/results.html', '../public/app/partials/portfolio/index.html', '../public/app/partials/portfolio/list.html', '../public/app/partials/public/banner.html', '../public/app/partials/public/careers.html', '../public/app/partials/public/footer.html', '../public/app/partials/public/header.html', '../public/app/partials/public/home.html', '../public/app/partials/public/index.html', '../public/app/partials/public/map.html', '../public/app/partials/public/portfolio.html', '../public/app/partials/test/index.html']);
+angular.module('templates-dist', ['../public/app/partials/account/book-add.html', '../public/app/partials/account/book-list.html', '../public/app/partials/account/book.html', '../public/app/partials/account/browse.html', '../public/app/partials/account/dashboard.html', '../public/app/partials/account/footer.html', '../public/app/partials/account/genres.html', '../public/app/partials/account/header.html', '../public/app/partials/account/index.html', '../public/app/partials/account/last-borrowed.html', '../public/app/partials/account/latest.html', '../public/app/partials/account/login.html', '../public/app/partials/account/my-books.html', '../public/app/partials/account/overdue.html', '../public/app/partials/account/results.html', '../public/app/partials/portfolio/index.html', '../public/app/partials/portfolio/list.html', '../public/app/partials/public/about.html', '../public/app/partials/public/banner.html', '../public/app/partials/public/footer.html', '../public/app/partials/public/header.html', '../public/app/partials/public/home.html', '../public/app/partials/public/index.html', '../public/app/partials/public/map.html', '../public/app/partials/public/members.html', '../public/app/partials/test/index.html']);
 
 angular.module("../public/app/partials/account/book-add.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/account/book-add.html",
@@ -273,6 +273,26 @@ angular.module("../public/app/partials/portfolio/list.html", []).run(["$template
     "");
 }]);
 
+angular.module("../public/app/partials/public/about.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/public/about.html",
+    "<div id=\"about\" class=\"content\">\n" +
+    "    <h2>About</h2>\n" +
+    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae corrupti beatae nesciunt\n" +
+    "    excepturi quaerat cum officia ab, ipsa praesentium labore provident libero, numquam vel\n" +
+    "    impedit facilis, nisi dolorum consectetur neque!</p>\n" +
+    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
+    "    Eligendi tempora recusandae voluptatem natus dignissimos\n" +
+    "    commodi itaque officiis, accusamus adipisci obcaecati tempore laboriosam suscipit debitis\n" +
+    "    maiores, at, sint qui. Voluptatum, rerum.</p>\n" +
+    "    <p>\n" +
+    "    Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
+    "    Error mollitia assumenda incidunt ab, eveniet ipsum ipsa nemo aut\n" +
+    "    laboriosam, tenetur? Ex eaque modi corporis impedit labore pariatur, eius\n" +
+    "    dicta molestias.\n" +
+    "    </p>\n" +
+    "</div>");
+}]);
+
 angular.module("../public/app/partials/public/banner.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/public/banner.html",
     "<div class=\"image-wrapper\" style=\"height:100%\">\n" +
@@ -294,62 +314,6 @@ angular.module("../public/app/partials/public/banner.html", []).run(["$templateC
     "");
 }]);
 
-angular.module("../public/app/partials/public/careers.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../public/app/partials/public/careers.html",
-    "<div id=\"careers\" class=\"content\">\n" +
-    "  <h2>Careers</h2>\n" +
-    "  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae corrupti beatae nesciunt\n" +
-    "     excepturi quaerat cum officia ab, ipsa praesentium labore provident libero, numquam vel\n" +
-    "     impedit facilis, nisi dolorum consectetur neque!</p>\n" +
-    "     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-    "       Eligendi tempora recusandae voluptatem natus dignissimos\n" +
-    "       commodi itaque officiis, accusamus adipisci obcaecati tempore laboriosam suscipit debitis\n" +
-    "        maiores, at, sint qui. Voluptatum, rerum.</p>\n" +
-    "        <p>\n" +
-    "          Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-    "          Error mollitia assumenda incidunt ab, eveniet ipsum ipsa nemo aut\n" +
-    "          laboriosam, tenetur? Ex eaque modi corporis impedit labore pariatur, eius\n" +
-    "          dicta molestias.\n" +
-    "        </p>\n" +
-    "        <div class=\"row\">\n" +
-    "          <div class=\"col-md-12\">\n" +
-    "            <h3>Instructions</h3>\n" +
-    "            <ol>\n" +
-    "              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis atque recusandae neque in quas omnis suscipit, animi vitae eaque. Ea odio neque quidem, saepe sit maiores eius iure illum natus</li>\n" +
-    "              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis atque recusandae neque in quas omnis suscipit, animi vitae eaque. Ea odio neque quidem, saepe sit maiores eius iure illum natus</li>\n" +
-    "              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis atque recusandae neque in quas omnis suscipit, animi vitae eaque. Ea odio neque quidem, saepe sit maiores eius iure illum natus</li>\n" +
-    "              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis atque recusandae neque in quas omnis suscipit, animi vitae eaque. Ea odio neque quidem, saepe sit maiores eius iure illum natus</li>\n" +
-    "              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis atque recusandae neque in quas omnis suscipit, animi vitae eaque. Ea odio neque quidem, saepe sit maiores eius iure illum natus</li>\n" +
-    "            </ol>\n" +
-    "          </div>\n" +
-    "          <div class=\"col-md-12\">\n" +
-    "            <h3>Apply</h3>\n" +
-    "            <form action=\"\">\n" +
-    "              <div class=\"form-group\">\n" +
-    "                <label for=\"\">Email Address</label>\n" +
-    "                <input type=\"text\" class=\"form-control\" placeholder=\"e.g mbugua@example.com\">\n" +
-    "              </div>\n" +
-    "              <div class=\"form-group\">\n" +
-    "                <label for=\"\">Cover Letter</label>\n" +
-    "                <textarea type=\"text\" class=\"form-control\" rows=\"5\" placeholder=\"e.g I really love coding...\"></textarea>\n" +
-    "              </div>\n" +
-    "              <div class=\"form-group\">\n" +
-    "                <label for=\"\">Resume</label>\n" +
-    "                <input type=\"file\" class=\"form-control\">\n" +
-    "              </div>\n" +
-    "              <button class=\"btn btn-default\">\n" +
-    "                Submit\n" +
-    "              </button>\n" +
-    "            </form>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "\n" +
-    "        <div class=\"col-md-6\"></div>\n" +
-    "\n" +
-    "</div>\n" +
-    "");
-}]);
-
 angular.module("../public/app/partials/public/footer.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/public/footer.html",
     "");
@@ -365,14 +329,14 @@ angular.module("../public/app/partials/public/header.html", []).run(["$templateC
     "  <div class=\"container-fluid\">\n" +
     "    <div class=\"navbar-header\">\n" +
     "      <a class=\"navbar-brand\" href=\"#\">\n" +
-    "        Research <span class=\"blue\">Lab</span>\n" +
+    "        The Book <span class=\"blue\">Club</span>\n" +
     "      </a>\n" +
     "    </div>\n" +
     "    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n" +
     "        <ul class=\"nav navbar-nav navbar-right\">\n" +
-    "          <li><a du-smooth-scroll du-scroll-spy=\"anchor\" href=\"#banner\">About</a></li>\n" +
-    "          <li><a du-smooth-scroll offset=\"50\" du-scroll-spy=\"anchor\" href=\"#portfolio\">Members</a></li>\n" +
-    "          <li><a du-smooth-scroll offset=\"50\" du-scroll-spy=\"anchor\" href=\"#careers\">Join</a></li>\n" +
+    "          <li><a du-smooth-scroll du-scroll-spy=\"anchor\" href=\"#about\">About</a></li>\n" +
+    "          <li><a du-smooth-scroll offset=\"50\" du-scroll-spy=\"anchor\" href=\"#members\">Members</a></li>\n" +
+    "          <li><a du-smooth-scroll offset=\"50\" du-scroll-spy=\"anchor\" href=\"#join\">Join</a></li>\n" +
     "        </ul>\n" +
     "      </div>\n" +
     "    </div>\n" +
@@ -383,9 +347,8 @@ angular.module("../public/app/partials/public/header.html", []).run(["$templateC
 angular.module("../public/app/partials/public/home.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/public/home.html",
     "<div id=\"banner\" ui-view=\"banner\"></div>\n" +
-    "<div ui-view=\"map\"></div>\n" +
-    "<div ui-view=\"portfolio\"></div>\n" +
-    "<div ui-view=\"careers\"></div>\n" +
+    "<div ui-view=\"about\"></div>\n" +
+    "<div ui-view=\"members\"></div>\n" +
     "<div ui-view=\"\"></div>\n" +
     "");
 }]);
@@ -402,23 +365,13 @@ angular.module("../public/app/partials/public/map.html", []).run(["$templateCach
     "");
 }]);
 
-angular.module("../public/app/partials/public/portfolio.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../public/app/partials/public/portfolio.html",
-    "<div id=\"portfolio\" class=\"content\">\n" +
-    "  <h3>Portfolio</h3>\n" +
+angular.module("../public/app/partials/public/members.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/public/members.html",
+    "<div id=\"members\" class=\"content\">\n" +
+    "  <h3>Members</h3>\n" +
     "  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae corrupti beatae nesciunt\n" +
     "     excepturi quaerat cum officia ab, ipsa praesentium labore provident libero, numquam vel\n" +
     "     impedit facilis, nisi dolorum consectetur neque!</p>\n" +
-    "     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-    "       Eligendi tempora recusandae voluptatem natus dignissimos\n" +
-    "       commodi itaque officiis, accusamus adipisci obcaecati tempore laboriosam suscipit debitis\n" +
-    "        maiores, at, sint qui. Voluptatum, rerum.</p>\n" +
-    "        <p>\n" +
-    "          Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-    "          Error mollitia assumenda incidunt ab, eveniet ipsum ipsa nemo aut\n" +
-    "          laboriosam, tenetur? Ex eaque modi corporis impedit labore pariatur, eius\n" +
-    "          dicta molestias.\n" +
-    "        </p>\n" +
     "</div>\n" +
     "");
 }]);
